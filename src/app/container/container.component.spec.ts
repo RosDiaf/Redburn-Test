@@ -1,6 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { ContainerComponent } from './container.component';
+import { TableComponent } from './table/table.component'
 import { DatasetService } from '../api/dataset.service'
 import { HttpClientTestingModule } from '@angular/common/http/testing'
 
@@ -11,7 +12,7 @@ describe('ContainerComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ContainerComponent ],
+      declarations: [ ContainerComponent, TableComponent ],
       imports: [ HttpClientTestingModule ],
       providers: [ DatasetService ]
     })

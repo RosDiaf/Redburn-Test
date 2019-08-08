@@ -16,7 +16,6 @@ export class ContainerComponent implements OnInit {
     .subscribe(
       (res) => {
         this.dataset = res
-        console.log(this.dataset);
       }
     )
   }
