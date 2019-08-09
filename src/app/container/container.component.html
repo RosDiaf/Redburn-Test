@@ -1,11 +1,14 @@
 <div class="container-fluid">
     <div class="row">
         <div class="col-lg-12">
-            <div class="row">
+            <div class="row justify-content-between">
                 <div class="col-lg-4">
                     <app-range-filter 
                         (onRangeSelect)="onRangeSelect($event)"
                         (onResetFilter)="onResetFilter()"></app-range-filter>
+                </div>
+                <div class="col-lg-4">
+                    <app-multiple-selection [dataset]="dataset"></app-multiple-selection>
                 </div>
             </div>
         </div>

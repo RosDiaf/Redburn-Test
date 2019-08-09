@@ -4,6 +4,7 @@ import { AppComponent } from './app.component';
 import { ContainerComponent } from './container/container.component'
 import { TableComponent } from './container/table/table.component'
 import { RangeFilterComponent } from './container/range-filter/range-filter.component';
+import { MultipleSelectionComponent } from './container/multiple-selection/multiple-selection.component';
 import { HttpClientTestingModule } from '@angular/common/http/testing'
 
 describe('AppComponent', () => {
@@ -13,7 +14,8 @@ describe('AppComponent', () => {
         AppComponent,
         ContainerComponent,
         TableComponent,
-        RangeFilterComponent
+        RangeFilterComponent,
+        MultipleSelectionComponent
       ],
       imports: [ HttpClientTestingModule, ReactiveFormsModule, FormsModule ],
     }).compileComponents();

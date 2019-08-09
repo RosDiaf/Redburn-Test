@@ -3,6 +3,7 @@ import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { ContainerComponent } from './container.component';
 import { TableComponent } from './table/table.component'
 import { RangeFilterComponent } from './range-filter/range-filter.component';
+import { MultipleSelectionComponent } from './multiple-selection/multiple-selection.component';
 import { DatasetService } from '../api/dataset.service'
 import { HttpClientTestingModule } from '@angular/common/http/testing'
 
@@ -13,7 +14,7 @@ describe('ContainerComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ContainerComponent, TableComponent, RangeFilterComponent ],
+      declarations: [ ContainerComponent, TableComponent, RangeFilterComponent, MultipleSelectionComponent ],
       imports: [ HttpClientTestingModule, ReactiveFormsModule, FormsModule ],
       providers: [ DatasetService ]
     })

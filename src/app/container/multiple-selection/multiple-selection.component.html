@@ -1,3 +1,12 @@
-<p>
-  multiple-selection works!
-</p>
+<h6>Group Filter</h6>
+<div class="multiple-selection">
+  <div class="form-group">
+    <select class="form-control" multiple>
+      <option *ngFor="let item of dataset">
+        {{ item['Group'] }}
+      </option>
+    </select>
+    <button type="submit" class="btn btn-primary">Submit</button>
+    <button type="submit" class="btn btn-danger" (click)="resetSlection()">Reset</button>
+  </div>
+</div>
