@@ -21,4 +21,8 @@ export class ContainerComponent implements OnInit {
       }
     )
   }
+
+  onRangeSelect(valueRange) {
+    console.log(valueRange);
+  }
 }

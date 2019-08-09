@@ -1,7 +1,9 @@
 import { TestBed, async } from '@angular/core/testing';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { ContainerComponent } from './container/container.component'
 import { TableComponent } from './container/table/table.component'
+import { RangeFilterComponent } from './container/range-filter/range-filter.component';
 import { HttpClientTestingModule } from '@angular/common/http/testing'
 
 describe('AppComponent', () => {
@@ -10,9 +12,10 @@ describe('AppComponent', () => {
       declarations: [
         AppComponent,
         ContainerComponent,
-        TableComponent
+        TableComponent,
+        RangeFilterComponent
       ],
-      imports: [ HttpClientTestingModule ],
+      imports: [ HttpClientTestingModule, ReactiveFormsModule, FormsModule ],
     }).compileComponents();
   }));
 
