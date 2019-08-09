@@ -1,0 +1,9 @@
+@import '../../../assets/styles/variables.scss';
+table {
+    .blue {
+        color: $tableCellBlueColor;
+    }
+    .red {
+        color: $tableCellRedColor;
+    }
+}
