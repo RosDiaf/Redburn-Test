@@ -22,5 +22,6 @@
         <div *ngIf="(!rangeFilterForm.controls['lessThan'].valid && rangeFilterForm.controls['lessThan'].touched)" class="error">Enter number</div>
     </div>
     <button type="submit" class="btn btn-primary">Submit</button>
+    <button type="submit" class="btn btn-danger" (click)="resetFilter()">Reset</button>
   </form>
 </div>

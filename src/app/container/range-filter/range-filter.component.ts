@@ -8,6 +8,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 })
 export class RangeFilterComponent implements OnInit {
   @Output() onRangeSelect: EventEmitter<any> = new EventEmitter();
+  @Output() onResetFilter: EventEmitter<any> = new EventEmitter();
   rangeFilterForm: FormGroup;
   constructor(private formBuilder: FormBuilder) { }
 
@@ -20,6 +21,11 @@ export class RangeFilterComponent implements OnInit {
       graterThan: this.formBuilder.control(null, [Validators.required, Validators.pattern("^[0-9]*$")]),
       lessThan: this.formBuilder.control(null, [Validators.required, Validators.pattern("^[0-9]*$")]),
     });
+  }
+
+  resetFilter() {
+    this.rangeFilterForm.reset();
+    this.onResetFilter.emit();
   }
 
   onSubmit() {

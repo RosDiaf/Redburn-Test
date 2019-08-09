@@ -28,4 +28,9 @@ export class ContainerComponent implements OnInit {
     this.greaterThanValFilter = valueRange.graterThan;
     this.lessThanValFilter = valueRange.lessThan;
   }
+
+  onResetFilter() {
+    this.greaterThanValFilter = null;
+    this.lessThanValFilter = null;
+  }
 }
