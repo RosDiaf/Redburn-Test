@@ -1,18 +1,17 @@
-import { Component, OnInit, Input, OnChanges } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-table',
   templateUrl: './table.component.html',
   styleUrls: ['./table.component.scss']
 })
-export class TableComponent implements OnChanges {
+export class TableComponent implements OnInit {
 
   @Input() dataset: any;
+  @Input() datasetKeys = [];
 
   constructor() { }
 
-  ngOnChanges() {
-    console.log(this.dataset)
+  ngOnInit() {
   }
-
 }

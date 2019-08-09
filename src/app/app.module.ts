@@ -9,11 +9,15 @@ import { TableComponent } from './container/table/table.component'
 // -- Service
 import { DatasetService } from './api/dataset.service';
 
+// -- Pipes
+import { KeysPipe } from './pipes/keys.pipe';
+
 @NgModule({
   declarations: [
     AppComponent,
     ContainerComponent,
-    TableComponent
+    TableComponent,
+    KeysPipe
   ],
   imports: [
     BrowserModule,

@@ -9,6 +9,7 @@ import { DatasetService } from '../api/dataset.service'
 export class ContainerComponent implements OnInit {
 
   dataset: any;
+  datasetKeys = [];
   constructor(private datasetService: DatasetService) { }
 
   ngOnInit() {
@@ -16,6 +17,7 @@ export class ContainerComponent implements OnInit {
     .subscribe(
       (res) => {
         this.dataset = res
+        this.datasetKeys = Object.keys(this.dataset[0])
       }
     )
   }
