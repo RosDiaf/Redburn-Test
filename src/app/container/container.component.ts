@@ -10,6 +10,8 @@ export class ContainerComponent implements OnInit {
 
   dataset: any;
   datasetKeys = [];
+  greaterThanValFilter: number;
+  lessThanValFilter: number;
   constructor(private datasetService: DatasetService) { }
 
   ngOnInit() {
@@ -23,6 +25,7 @@ export class ContainerComponent implements OnInit {
   }
 
   onRangeSelect(valueRange) {
-    console.log(valueRange);
+    this.greaterThanValFilter = valueRange.graterThan;
+    this.lessThanValFilter = valueRange.lessThan;
   }
 }

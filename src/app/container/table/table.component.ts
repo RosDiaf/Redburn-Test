@@ -9,9 +9,10 @@ export class TableComponent implements OnInit {
 
   @Input() dataset: any;
   @Input() datasetKeys = [];
+  @Input() greaterThanValFilter: number;
+  @Input() lessThanValFilter: number;
 
   constructor() { }
 
-  ngOnInit() {
-  }
+  ngOnInit() {}
 }

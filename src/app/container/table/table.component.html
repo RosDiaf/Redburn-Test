@@ -11,41 +11,52 @@
     <tbody>
       <ng-container *ngFor="let item of dataset">
         <tr>
-          <td scope="col">{{ item["Ticker"] }}</td>
-          <td scope="col" [ngClass]="item['IDEAS Score (/100)'] > 50 ? 'blue' : 'red'">
-            {{ item["Company"] }}
-          </td>
-          <td scope="col" [ngClass]="item['IDEAS Score (/100)'] > 50 ? 'blue' : 'red'">
-            {{ item["IDEAS Score (/100)"] }}
-          </td>
-          <td scope="col" [ngClass]="item['Value Score (/100)'] > 50 ? 'blue' : 'red'">
-            {{ item["Value Score (/100)"] }}
-          </td>
-          <td scope="col" [ngClass]="item['Growth Score (/100)'] > 50 ? 'blue' : 'red'">
-            {{ item["Growth Score (/100)"] }}
-          </td>
-          <td scope="col" [ngClass]="item['Ests Momentum - EPS'] > 50 ? 'blue' : 'red'">
-            {{ item["Ests Momentum - EPS"] }}
-          </td>
-          <td scope="col" [ngClass]="item['Ests Mom Change (3m) - EPS'] > 50 ? 'blue' : 'red'">
-            {{ item["Ests Mom Change (3m) - EPS"] }}
-          </td>
-          <td scope="col" [ngClass]="item['Quality Score (/100)'] > 50 ? 'blue': 'red'">
-            {{ item["Quality Score (/100)"] }}
-          </td>
-          <td scope="col">{{ item["Wave Column"] }}</td>
-          <td scope="col">{{ item["Mkt Cap $(m)"] }}</td>
-          <td scope="col">{{ item["Group"] }}</td>
-          <td scope="col">{{ item["IDEAS Score - 1D Ago"] }}</td>
-          <td scope="col">{{ item["Value Score (/100) - 12M Ago"] }}</td>
-          <td scope="col">{{ item["Growth Score (/100) - 1D Ago"] }}</td>
-          <td scope="col">{{ item["Ests Momentum - 1D Ago"] }}</td>
-          <td scope="col">{{ item["Ests Mom Change (3m) - 1D Ago"] }}</td>
-          <td scope="col">{{ item["Quality Score (/100) - 1D Ago"] }}</td>
-          <td scope="col">{{ item["Wave Column - 1D Ago"] }}</td>
+          <ng-container *ngIf="(greaterThanValFilter !== null && lessThanValFilter !== null)">
+            <ng-container *ngIf="(item['Mkt Cap $(m)'] > greaterThanValFilter && item['Mkt Cap $(m)'] <= lessThanValFilter)">
+              <ng-container *ngTemplateOutlet="dataCells"></ng-container>
+            </ng-container>
+          </ng-container>
+
+          <ng-container *ngIf="((!greaterThanValFilter && !lessThanValFilter))">
+            <ng-container *ngTemplateOutlet="dataCells"></ng-container>
+          </ng-container>
+
+          <ng-template #dataCells>
+            <td scope="col">{{ item["Ticker"] }}</td>
+            <td scope="col" [ngClass]="item['IDEAS Score (/100)'] > 50 ? 'blue' : 'red'">
+              {{ item["Company"] }}
+            </td>
+            <td scope="col" [ngClass]="item['IDEAS Score (/100)'] > 50 ? 'blue' : 'red'">
+              {{ item["IDEAS Score (/100)"] }}
+            </td>
+            <td scope="col" [ngClass]="item['Value Score (/100)'] > 50 ? 'blue' : 'red'">
+              {{ item["Value Score (/100)"] }}
+            </td>
+            <td scope="col" [ngClass]="item['Growth Score (/100)'] > 50 ? 'blue' : 'red'">
+              {{ item["Growth Score (/100)"] }}
+            </td>
+            <td scope="col" [ngClass]="item['Ests Momentum - EPS'] > 50 ? 'blue' : 'red'">
+              {{ item["Ests Momentum - EPS"] }}
+            </td>
+            <td scope="col" [ngClass]="item['Ests Mom Change (3m) - EPS'] > 50 ? 'blue' : 'red'">
+              {{ item["Ests Mom Change (3m) - EPS"] }}
+            </td>
+            <td scope="col" [ngClass]="item['Quality Score (/100)'] > 50 ? 'blue': 'red'">
+              {{ item["Quality Score (/100)"] }}
+            </td>
+            <td scope="col">{{ item["Wave Column"] }}</td>
+            <td scope="col">{{ item["Mkt Cap $(m)"] }}</td>
+            <td scope="col">{{ item["Group"] }}</td>
+            <td scope="col">{{ item["IDEAS Score - 1D Ago"] }}</td>
+            <td scope="col">{{ item["Value Score (/100) - 12M Ago"] }}</td>
+            <td scope="col">{{ item["Growth Score (/100) - 1D Ago"] }}</td>
+            <td scope="col">{{ item["Ests Momentum - 1D Ago"] }}</td>
+            <td scope="col">{{ item["Ests Mom Change (3m) - 1D Ago"] }}</td>
+            <td scope="col">{{ item["Quality Score (/100) - 1D Ago"] }}</td>
+            <td scope="col">{{ item["Wave Column - 1D Ago"] }}</td>
+          </ng-template>
         </tr>
       </ng-container>
     </tbody>
   </table>
 </div>
-    
