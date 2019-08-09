@@ -7,6 +7,7 @@ import { AppComponent } from './app.component';
 import { ContainerComponent } from './container/container.component';
 import { TableComponent } from './container/table/table.component'
 import { RangeFilterComponent } from './container/range-filter/range-filter.component';
+import { MultipleSelectionComponent } from './container/multiple-selection/multiple-selection.component';
 
 // -- Service
 import { DatasetService } from './api/dataset.service';
@@ -17,6 +18,7 @@ import { DatasetService } from './api/dataset.service';
     ContainerComponent,
     TableComponent,
     RangeFilterComponent,
+    MultipleSelectionComponent,
   ],
   imports: [
     BrowserModule,
