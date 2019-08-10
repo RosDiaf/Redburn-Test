@@ -12,7 +12,12 @@ export class TableComponent implements OnInit {
   @Input() greaterThanValFilter: number;
   @Input() lessThanValFilter: number;
   @Input() multipleItemSelected = [];
+  isTitleHeaderFullyVisible: boolean;
   constructor() { }
 
   ngOnInit() {}
+
+  toggleTableHeaders() {
+    this.isTitleHeaderFullyVisible = !this.isTitleHeaderFullyVisible;
+  }
 }

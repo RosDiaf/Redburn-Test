@@ -6,15 +6,8 @@
     <div class="card-body">
       <div class="form-group">
         <form (ngSubmit)="onSubmit($event)">
-          <label for="selectItem">Select multiple items. Hold down the <strong>Ctrl</strong> button to select multiple options.</label>
-          
-          <!-- <div style="height: 6em; width: 12em; overflow: auto;">
-            <div>  
-              <input *ngFor="let item of dataset" [id]="item['Group']" type="checkbox" name="groups[]" [value]="item['Group']" />
-              <label [for]="item['Group']">{{ item['Group'] }}</label>
-            </div>
-          </div> -->
-          
+          <label for="selectItem">Select multiple items.</label>
+          <p>Hold down the <strong>Ctrl</strong> button to select multiple options.</p>
           <select class="form-control" id="selectedItems" name="selectedItems" multiple size="9" [(ngModel)]="selectedItems">
             <option *ngFor="let item of dataset" value="{{ item['Group'] }}">
               {{ item['Group'] }}
