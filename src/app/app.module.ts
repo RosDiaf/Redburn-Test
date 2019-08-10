@@ -18,7 +18,7 @@ import { DatasetService } from './api/dataset.service';
     ContainerComponent,
     TableComponent,
     RangeFilterComponent,
-    MultipleSelectionComponent,
+    MultipleSelectionComponent
   ],
   imports: [
     BrowserModule,

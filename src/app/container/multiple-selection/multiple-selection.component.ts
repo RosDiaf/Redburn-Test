@@ -11,6 +11,7 @@ export class MultipleSelectionComponent implements OnInit {
   @Output() onMultipleSelection: EventEmitter<any> = new EventEmitter();
   groupNames: any;
   selectedItems: any;
+  isToggleHeader: boolean;
 
   constructor() { }
 
@@ -23,5 +24,9 @@ export class MultipleSelectionComponent implements OnInit {
 
   resetSlection() {
     this.selectedItems.length = 0;
+  }
+
+  toggleHeader() {
+    this.isToggleHeader = !this.isToggleHeader;
   }
 }

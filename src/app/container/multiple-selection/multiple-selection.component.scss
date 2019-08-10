@@ -1,11 +1,12 @@
 .card {
+    h6 {
+        cursor: pointer;
+        text-decoration: underline;
+    }
     .card-body {
         padding-bottom: 0;
     }        
     .multiple-selection {
-        select {
-            margin-bottom: 20px;
-        }
         button {
             margin-right: 5px;
         }

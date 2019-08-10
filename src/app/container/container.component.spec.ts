@@ -14,7 +14,11 @@ describe('ContainerComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ContainerComponent, TableComponent, RangeFilterComponent, MultipleSelectionComponent ],
+      declarations: [ 
+        ContainerComponent,
+        TableComponent,
+        RangeFilterComponent,
+        MultipleSelectionComponent ],
       imports: [ HttpClientTestingModule, ReactiveFormsModule, FormsModule ],
       providers: [ DatasetService ]
     })

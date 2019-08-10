@@ -1,4 +1,7 @@
-<button class="btn btn-dark" (click)="toggleTableHeaders()">Toggle Headers</button>
+<button class="btn btn-dark" (click)="toggleTableHeaders()">
+  Toggle Headers
+  <i [ngClass]="isTitleHeaderFullyVisible ? 'fa fa-chevron-circle-down' : 'fa fa-chevron-circle-right'"></i>
+</button>
 <div class="table-responsive fixed-table-body">
   <div class="table-container">
     <table class="table table-bordered table-hover">

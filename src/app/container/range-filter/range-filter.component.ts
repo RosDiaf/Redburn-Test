@@ -10,6 +10,8 @@ export class RangeFilterComponent implements OnInit {
   @Output() onRangeSelect: EventEmitter<any> = new EventEmitter();
   @Output() onResetFilter: EventEmitter<any> = new EventEmitter();
   rangeFilterForm: FormGroup;
+  isToggleHeader: boolean;
+
   constructor(private formBuilder: FormBuilder) { }
 
   ngOnInit() {
@@ -32,5 +34,9 @@ export class RangeFilterComponent implements OnInit {
     if (this.rangeFilterForm.valid) {
       this.onRangeSelect.emit(this.rangeFilterForm.value);
     }
+  }
+
+  toggleHeader() {
+    this.isToggleHeader = !this.isToggleHeader;
   }
 }

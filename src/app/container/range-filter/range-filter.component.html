@@ -1,9 +1,10 @@
 <div class="card">
   <div class="range-filter">
     <div class="card-header">
-      <h6>Mkt Cap Filter - specify greater than or less than a number</h6>
+      <h6 (click)="toggleHeader()">Mkt Cap Filter <i [ngClass]="isToggleHeader ? 'fa fa-chevron-circle-down' : 'fa fa-chevron-circle-right'" class="pull-right"></i></h6>
     </div>
-    <div class="card-body">
+    <div class="card-body" [ngClass]="isToggleHeader ? 'show' : 'hide'">
+      <p>Specify range</p>
       <form [formGroup]="rangeFilterForm" name="rangeFilterForm" (ngSubmit)="onSubmit()">
         <div class="form-group">
           <label for="graterThan">Greater than</label>
@@ -25,8 +26,10 @@
             placeholder="eg. 80">
             <div *ngIf="(!rangeFilterForm.controls['lessThan'].valid && rangeFilterForm.controls['lessThan'].touched)" class="error">Enter number</div>
         </div>
-        <button type="submit" class="btn btn-primary">Submit</button>
-        <button type="submit" class="btn btn-danger" (click)="resetFilter()">Reset</button>
+        <div class="form-group">
+          <button type="submit" class="btn btn-primary">Submit</button>
+          <button type="submit" class="btn btn-danger" (click)="resetFilter()">Reset</button>
+        </div>
       </form>
     </div>
   </div>
