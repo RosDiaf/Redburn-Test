@@ -12,12 +12,15 @@
       <tbody>
         <ng-container *ngFor="let item of dataset">
           <tr>
+            <!-- Mkt Cap Filter : start -->
             <ng-container *ngIf="(greaterThanValFilter !== null && lessThanValFilter !== null)">
               <ng-container *ngIf="(item['Mkt Cap $(m)'] > greaterThanValFilter && item['Mkt Cap $(m)'] <= lessThanValFilter)">
                 <ng-container *ngTemplateOutlet="dataCells"></ng-container>
               </ng-container>
             </ng-container>
+            <!-- End -->
 
+            <!-- Group Filter -->
             <ng-container *ngIf="((!greaterThanValFilter && !lessThanValFilter && multipleItemSelected.length > 0))">
               <ng-container *ngFor="let selectedItem of multipleItemSelected; let i = index ">
                 <ng-container *ngIf="item['Group'] === selectedItem">
@@ -25,11 +28,15 @@
                 </ng-container>
               </ng-container>
             </ng-container>
+            <!-- End -->
 
+            <!-- No Filters Applied -->
             <ng-container *ngIf="((!greaterThanValFilter && !lessThanValFilter && multipleItemSelected.length == 0))">
               <ng-container *ngTemplateOutlet="dataCells"></ng-container>
             </ng-container>
+            <!-- End -->
 
+            <!-- Data Cells -->
             <ng-template #dataCells>
               <td scope="col">{{ item["Ticker"] }}</td>
               <td scope="col" [ngClass]="item['IDEAS Score (/100)'] > 50 ? 'blue' : 'red'">
@@ -64,6 +71,8 @@
               <td scope="col">{{ item["Quality Score (/100) - 1D Ago"] }}</td>
               <td scope="col">{{ item["Wave Column - 1D Ago"] }}</td>
             </ng-template>
+            <!-- End -->
+            
           </tr>
         </ng-container>
       </tbody>

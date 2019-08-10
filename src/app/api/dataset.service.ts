@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpErrorResponse } from '@angular/common/http';
 import { Observable, throwError } from 'rxjs';
 import { catchError, map} from 'rxjs/operators';
+import { constants } from './constants';
 
 @Injectable({
   providedIn: 'root'
@@ -11,7 +12,7 @@ export class DatasetService {
   constructor(private http: HttpClient) { }
 
   getDataset(): Observable<any> {
-    return this.http.get('/assets/mock/data.json')
+    return this.http.get(constants.API.url)
       .pipe(
         catchError(this.handleError)
       );

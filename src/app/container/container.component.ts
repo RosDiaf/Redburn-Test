@@ -20,7 +20,7 @@ export class ContainerComponent implements OnInit {
     .subscribe(
       (res) => {
         this.dataset = res
-        this.datasetKeys = Object.keys(this.dataset[0])
+        this.datasetKeys = Object.keys(this.dataset[0]) // Save only keys for table headers
       }
     )
   }
