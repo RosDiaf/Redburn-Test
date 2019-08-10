@@ -2,13 +2,16 @@
     <div class="row">
         <div class="col-lg-12">
             <div class="row justify-content-between">
-                <div class="col-lg-4">
+                <div class="col-lg-3">
                     <app-range-filter 
                         (onRangeSelect)="onRangeSelect($event)"
                         (onResetFilter)="onResetFilter()"></app-range-filter>
                 </div>
-                <div class="col-lg-4">
-                    <app-multiple-selection [dataset]="dataset"></app-multiple-selection>
+                <div class="col-lg-9">
+                    <app-multiple-selection 
+                        [dataset]="dataset"
+                        (onMultipleSelection)="onMultipleSelection($event)">
+                    </app-multiple-selection>
                 </div>
             </div>
         </div>
@@ -19,7 +22,8 @@
                 [dataset]="dataset" 
                 [datasetKeys]="datasetKeys"
                 [greaterThanValFilter]="greaterThanValFilter"
-                [lessThanValFilter]="lessThanValFilter">
+                [lessThanValFilter]="lessThanValFilter"
+                [multipleItemSelected]="multipleItemSelected">
             </app-table>
         </div>
     </div>

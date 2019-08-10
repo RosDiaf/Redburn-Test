@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-multiple-selection',
@@ -8,10 +8,20 @@ import { Component, OnInit, Input } from '@angular/core';
 export class MultipleSelectionComponent implements OnInit {
 
   @Input() dataset: any;
+  @Output() onMultipleSelection: EventEmitter<any> = new EventEmitter();
+  groupNames: any;
+  selectedItems: any;
 
   constructor() { }
 
   ngOnInit() {
   }
 
+  onSubmit() {
+    this.onMultipleSelection.emit(this.selectedItems);
+  }
+
+  resetSlection() {
+    this.selectedItems.length = 0;
+  }
 }

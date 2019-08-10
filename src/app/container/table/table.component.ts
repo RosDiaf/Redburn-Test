@@ -11,7 +11,7 @@ export class TableComponent implements OnInit {
   @Input() datasetKeys = [];
   @Input() greaterThanValFilter: number;
   @Input() lessThanValFilter: number;
-
+  @Input() multipleItemSelected = [];
   constructor() { }
 
   ngOnInit() {}

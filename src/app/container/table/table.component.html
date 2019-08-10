@@ -1,5 +1,5 @@
-
-<div class="table-responsive fixed-table-body">
+<div class="table-responsive fixed-table-body dataset">
+  <button class="btn btn-dark">Toggle Headers</button>
   <table class="table table-bordered table-hover">
     <thead class="thead-dark">
       <tr>
@@ -17,7 +17,15 @@
             </ng-container>
           </ng-container>
 
-          <ng-container *ngIf="((!greaterThanValFilter && !lessThanValFilter))">
+          <ng-container *ngIf="((!greaterThanValFilter && !lessThanValFilter && multipleItemSelected.length > 0))">
+            <ng-container *ngFor="let selectedItem of multipleItemSelected; let i = index ">
+              <ng-container *ngIf="item['Group'] === selectedItem">
+                <ng-container *ngTemplateOutlet="dataCells"></ng-container>
+              </ng-container>
+            </ng-container>
+          </ng-container>
+
+          <ng-container *ngIf="((!greaterThanValFilter && !lessThanValFilter && multipleItemSelected.length == 0))">
             <ng-container *ngTemplateOutlet="dataCells"></ng-container>
           </ng-container>
 

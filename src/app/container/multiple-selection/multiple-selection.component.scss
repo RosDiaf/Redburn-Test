@@ -1,8 +1,13 @@
-.multiple-selection {
-    select {
-        margin-bottom: 20px;
-    }
-    button {
-        margin-right: 5px;
+.card {
+    .card-body {
+        padding-bottom: 0;
+    }        
+    .multiple-selection {
+        select {
+            margin-bottom: 20px;
+        }
+        button {
+            margin-right: 5px;
+        }
     }
 }
