@@ -1,5 +1,5 @@
 <button class="btn btn-dark" (click)="toggleTableHeaders()">
-  Toggle Headers
+  {{ isTitleHeaderFullyVisible ? 'Truncate Headers' : 'Show Full Headers' }}
   <i [ngClass]="isTitleHeaderFullyVisible ? 'fa fa-chevron-circle-down' : 'fa fa-chevron-circle-right'"></i>
 </button>
 <div class="table-responsive fixed-table-body">
