@@ -4,7 +4,6 @@
       <h6 (click)="toggleHeader()">Mkt Cap Filter <i [ngClass]="isToggleHeader ? 'fa fa-chevron-circle-down' : 'fa fa-chevron-circle-right'" class="pull-right"></i></h6>
     </div>
     <div class="card-body" [ngClass]="isToggleHeader ? 'show' : 'hide'">
-      <p>Specify range</p>
       <form [formGroup]="rangeFilterForm" name="rangeFilterForm" (ngSubmit)="onSubmit()">
         <div class="form-group">
           <label for="graterThan">Greater than</label>

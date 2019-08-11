@@ -5,18 +5,17 @@
         <i [ngClass]="isToggleHeader ? 'fa fa-chevron-circle-down' : 'fa fa-chevron-circle-right'" class="pull-right"></i></h6>
     </div>
     <div class="card-body" [ngClass]="isToggleHeader ? 'show' : 'hide'">
-      <form (ngSubmit)="onSubmit($event)">
-        <div class="form-group">
-          <label for="selectItem">Hold down the <strong>Ctrl</strong> button to select multiple items.</label>
-          <select class="form-control" id="selectedItems" name="selectedItems" multiple size="7" [(ngModel)]="selectedItems">
-            <option *ngFor="let item of dataset" value="{{ item['Group'] }}">
-              {{ item['Group'] }}
-            </option>
-          </select>
-        </div>
-        <div class="form-group">
-            <button type="submit" class="btn btn-primary">Submit</button>
-            <button type="submit" class="btn btn-danger" (click)="resetSlection()">Reset</button>
+      <form>
+        <div class="checkbox-container">
+          <div class="form-group" *ngFor="let item of dataset; let x = index">
+              <input type="checkbox"
+                class="form-check-input"
+                id="item_{{x}}"
+                name="groups[]"
+                value="{{ item['Group'] }}" 
+                (change)="onChangeCategory($event, item['Group'])"/>
+              <label class="form-check-label" for="item_{{x}}">{{ item['Group'] }}</label>
+          </div>
         </div>
       </form>
     </div>

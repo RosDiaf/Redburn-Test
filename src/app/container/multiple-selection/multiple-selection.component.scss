@@ -11,4 +11,13 @@
             margin-right: 5px;
         }
     }
+    .checkbox-container {
+        max-height: 225px;
+        overflow-y: scroll;
+        position: relative;
+        input {
+            position: relative;
+            margin-left: 0;
+        }
+    }
 }
