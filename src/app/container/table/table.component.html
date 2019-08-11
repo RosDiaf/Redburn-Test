@@ -1,8 +1,12 @@
 <button class="btn btn-dark" (click)="toggleTableHeaders()">
   {{ isTitleHeaderFullyVisible ? 'Truncate Headers' : 'Show Full Headers' }}
-  <i [ngClass]="isTitleHeaderFullyVisible ? 'fa fa-chevron-circle-down' : 'fa fa-chevron-circle-right'"></i>
+  <i [ngClass]="isTitleHeaderFullyVisible ? 'fa fa-minus-circle' : 'fa fa fa-plus-circle'"></i>
 </button>
-<div class="table-responsive fixed-table-body">
+<button class="btn btn-dark" (click)="toggleFixTableHeight()">
+  {{ isFixTableHeight ? 'Add Table Scroller' : 'Remove Table Scroller' }}
+  <i [ngClass]="isFixTableHeight ? 'fa fa-plus-circle' : 'fa fa-minus-circle'"></i>
+</button>
+<div class="table-responsive fixed-table-body" [ngClass]="isFixTableHeight ? 'remove-scroller' : '' ">
   <div class="table-container">
     <table class="table table-bordered table-hover">
       <thead class="thead-dark">
