@@ -6,6 +6,7 @@ import { TableComponent } from './container/table/table.component'
 import { RangeFilterComponent } from './container/range-filter/range-filter.component';
 import { MultipleSelectionComponent } from './container/multiple-selection/multiple-selection.component';
 import { HttpClientTestingModule } from '@angular/common/http/testing'
+import { KeysPipe } from './pipe/keys.pipe';
 
 describe('AppComponent', () => {
   beforeEach(async(() => {
@@ -15,7 +16,8 @@ describe('AppComponent', () => {
         ContainerComponent,
         TableComponent,
         RangeFilterComponent,
-        MultipleSelectionComponent
+        MultipleSelectionComponent,
+        KeysPipe
       ],
       imports: [ HttpClientTestingModule, ReactiveFormsModule, FormsModule ],
     }).compileComponents();

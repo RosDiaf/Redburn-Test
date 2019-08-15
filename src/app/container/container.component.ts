@@ -12,6 +12,7 @@ export class ContainerComponent implements OnInit {
   datasetKeys = [];
   greaterThanValFilter: number;
   lessThanValFilter: number;
+  filterRangeValues: any;
   multipleItemSelected = [];
   constructor(private datasetService: DatasetService) { }
 

@@ -6,6 +6,7 @@ import { RangeFilterComponent } from './range-filter/range-filter.component';
 import { MultipleSelectionComponent } from './multiple-selection/multiple-selection.component';
 import { DatasetService } from '../api/dataset.service'
 import { HttpClientTestingModule } from '@angular/common/http/testing'
+import { KeysPipe } from '../pipe/keys.pipe';
 
 
 describe('ContainerComponent', () => {
@@ -18,7 +19,8 @@ describe('ContainerComponent', () => {
         ContainerComponent,
         TableComponent,
         RangeFilterComponent,
-        MultipleSelectionComponent ],
+        MultipleSelectionComponent,
+        KeysPipe ],
       imports: [ HttpClientTestingModule, ReactiveFormsModule, FormsModule ],
       providers: [ DatasetService ]
     })

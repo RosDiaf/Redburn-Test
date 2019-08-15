@@ -12,13 +12,17 @@ import { MultipleSelectionComponent } from './container/multiple-selection/multi
 // -- Service
 import { DatasetService } from './api/dataset.service';
 
+// -- Pipe
+import { KeysPipe } from './pipe/keys.pipe';
+
 @NgModule({
   declarations: [
     AppComponent,
     ContainerComponent,
     TableComponent,
     RangeFilterComponent,
-    MultipleSelectionComponent
+    MultipleSelectionComponent,
+    KeysPipe
   ],
   imports: [
     BrowserModule,
