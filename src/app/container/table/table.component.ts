@@ -1,6 +1,8 @@
 import { Component, OnInit, DoCheck, Input } from '@angular/core';
 import { multiselectionFilter } from '../../shared/multiSelectionFilter'
 import { rangeValuesFilter } from '../../shared/rangeValuesFilter'
+import { constants } from '../../api/constants'
+
 @Component({
   selector: 'app-table',
   templateUrl: './table.component.html',
@@ -53,9 +55,9 @@ export class TableComponent implements OnInit, DoCheck {
     for(let i of items) {
       if(key === i) {
         if (value > 50) {
-          return 'blue'
+          return constants.COLORS.color1
         } else {
-          return 'red'
+          return constants.COLORS.color2
         }
       }
     }
