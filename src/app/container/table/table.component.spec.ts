@@ -1,5 +1,5 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { RouterModule, Routes } from '@angular/router';
 import { TableComponent } from './table.component';
 import { KeysPipe } from '../../pipe/keys.pipe';
 
@@ -10,7 +10,8 @@ describe('TableComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ TableComponent, KeysPipe ]
+      declarations: [ TableComponent, KeysPipe ],
+      imports: [ RouterModule.forRoot([]) ]
     })
     .compileComponents();
   }));

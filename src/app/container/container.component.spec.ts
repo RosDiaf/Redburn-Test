@@ -1,4 +1,5 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { RouterModule, Routes } from '@angular/router';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { ContainerComponent } from './container.component';
 import { TableComponent } from './table/table.component'
@@ -21,7 +22,7 @@ describe('ContainerComponent', () => {
         RangeFilterComponent,
         MultipleSelectionComponent,
         KeysPipe ],
-      imports: [ HttpClientTestingModule, ReactiveFormsModule, FormsModule ],
+      imports: [ HttpClientTestingModule, ReactiveFormsModule, FormsModule, RouterModule.forRoot([]) ],
       providers: [ DatasetService ]
     })
     .compileComponents();

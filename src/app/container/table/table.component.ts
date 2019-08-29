@@ -1,4 +1,5 @@
 import { Component, OnInit, DoCheck, Input } from '@angular/core';
+import { Router } from '@angular/router';
 import { multiselectionFilter } from '../../shared/multiSelectionFilter'
 import { rangeValuesFilter } from '../../shared/rangeValuesFilter'
 import { constants } from '../../api/constants'
@@ -18,7 +19,7 @@ export class TableComponent implements OnInit, DoCheck {
   isTitleHeaderFullyVisible: boolean;
   isFixTableHeight: boolean;
   datasetTemp: any;
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit() {}
 
@@ -61,5 +62,9 @@ export class TableComponent implements OnInit, DoCheck {
         }
       }
     }
+  }
+
+  navigateToChart(dataset) {
+    this.router.navigate(['/chart'], { queryParams: dataset });
   }
 }

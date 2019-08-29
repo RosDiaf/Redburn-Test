@@ -6,6 +6,10 @@
   {{ isFixTableHeight ? 'Add Table Scroller' : 'Remove Table Scroller' }}
   <i [ngClass]="isFixTableHeight ? 'fa fa-plus-circle' : 'fa fa-minus-circle'"></i>
 </button>
+<button class="btn btn-primary" (click)="navigateToChart(dataset)">
+  CHART
+  <i class="fa fa-arrow-right"></i>
+</button>
 <div class="table-responsive fixed-table-body" [ngClass]="isFixTableHeight ? 'remove-scroller' : '' ">
   <div class="table-container">
     <table class="table table-bordered table-hover">

@@ -1,4 +1,5 @@
 import { TestBed, async } from '@angular/core/testing';
+import { RouterModule, Routes } from '@angular/router';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { ContainerComponent } from './container/container.component'
@@ -19,7 +20,7 @@ describe('AppComponent', () => {
         MultipleSelectionComponent,
         KeysPipe
       ],
-      imports: [ HttpClientTestingModule, ReactiveFormsModule, FormsModule ],
+      imports: [ HttpClientTestingModule, ReactiveFormsModule, FormsModule, RouterModule.forRoot([]) ],
     }).compileComponents();
   }));
 
