@@ -1,0 +1,13 @@
+
+ng2-charts
+https://valor-software.com/ng2-charts/#BarChart
+
+Using Chart.js in Angular With ng2-charts
+https://alligator.io/angular/chartjs-ng2-charts/
+
+Charts js WARNING
+https://stackoverflow.com/questions/56371427/warning-in-node-modules-ng2-charts-fesm5-ng2-charts-js-23054-72-export-%C9%B5%C9%B5de
+
+ng2-charts v2.2.4 has this bug as lots of users are reporting that so down-grading to ng2-charts v2.2.3 is fine until it is fixed in the future releases.
+
+npm install ng2-charts@2.2.3

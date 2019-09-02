@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { DatasetService } from '../api/dataset.service'
-
 @Component({
   selector: 'app-container',
   templateUrl: './container.component.html',
@@ -8,6 +7,7 @@ import { DatasetService } from '../api/dataset.service'
 })
 export class ContainerComponent implements OnInit {
 
+  dataModel: any;
   dataset: any;
   datasetKeys = [];
   greaterThanValFilter: number;

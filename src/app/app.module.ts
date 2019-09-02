@@ -42,8 +42,9 @@ import { AppRoutingModule } from './app-routing.module';
     RouterModule.forRoot([])
   ],
   exports: [
+    ChartsModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
   ],
   providers: [DatasetService],
   bootstrap: [AppComponent]

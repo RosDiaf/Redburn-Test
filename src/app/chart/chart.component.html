@@ -1,3 +1,31 @@
-<p>
-  chart works!
-</p>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-lg-5">
+      <form class="form-inline">
+        <div class="form-group">
+          <label for="company">Company&nbsp;</label>
+          <select class="form-control" name="company" id="company" [(ngModel)]="company" (change)="onChangeOptionItem()">
+            <option>-- Select Company --</option>
+            <option *ngFor="let item of dataset; let x = index">
+              {{ item.Company }}</option>
+          </select>
+        </div>
+      </form>
+    </div>
+    <div class="col-lg-7">
+      <button class="btn btn-primary pull-right" (click)="navigateToTable()">Back</button>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-lg-12">
+      <canvas baseChart *ngIf="barChartData.length > 0"
+        [datasets]="barChartData"
+        [labels]="barChartLabels"
+        [options]="barChartOptions"
+        [plugins]="barChartPlugins"
+        [legend]="barChartLegend"
+        [chartType]="barChartType">
+      </canvas>
+    </div>
+  </div>
+</div>

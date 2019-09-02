@@ -24,7 +24,6 @@ export class TableComponent implements OnInit, DoCheck {
   ngOnInit() {}
 
   ngDoCheck() {
-    
     if(this.multipleItemSelected.length > 0) {
       this.datasetTemp =
         multiselectionFilter(
@@ -65,6 +64,7 @@ export class TableComponent implements OnInit, DoCheck {
   }
 
   navigateToChart(dataset) {
-    this.router.navigate(['/chart'], { queryParams: dataset });
+    this.router.navigate(['/chart']);
+    //, { queryParams: dataset, skipLocationChange: true }
   }
 }
