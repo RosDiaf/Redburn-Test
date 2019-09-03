@@ -13,7 +13,6 @@ import { Label } from 'ng2-charts';
 export class ChartComponent implements OnInit {
 
   dataset: any;
-  datasetKeys = [];
   company: string;
 
   public barChartOptions: ChartOptions = {
@@ -32,7 +31,6 @@ export class ChartComponent implements OnInit {
   public barChartType: ChartType = 'bar';
   public barChartLegend = true;
   public barChartPlugins = [pluginDataLabels];
-
   public barChartData: ChartDataSets[] = [];
 
   constructor(private router: Router, private datasetService: DatasetService) { }
@@ -42,7 +40,6 @@ export class ChartComponent implements OnInit {
     .subscribe(
       (res) => {
         this.dataset = res
-        this.datasetKeys = Object.keys(this.dataset[0])
         console.log(this.dataset)
       }
     )
@@ -52,16 +49,25 @@ export class ChartComponent implements OnInit {
     this.router.navigate(['']);
   }
 
-  onChangeOptionItem() {
-    console.log(this.company)
+  setChartType(type, event) {
+    this.setTabNavStatus(event);
+    this.barChartType = type;
+  }
 
+  setTabNavStatus(e) {
+    var elems = document.querySelectorAll(".active");
+    [].forEach.call(elems, function(el) {
+      el.classList.remove("active");
+    });
+    e.target.className = "nav-link active";
+  }
+
+  onChangeOptionItem() {
     // Filter object with company name provided from dropdown
     let company = this.company;
     let companyData =  this.dataset.filter(function(data) {
       return data.Company == company;
     });
-
-    console.log(companyData)
 
     // Set chart labels
     this.barChartLabels = [
@@ -82,4 +88,31 @@ export class ChartComponent implements OnInit {
         companyData[0]["Quality Score (/100)"],
       ], label: this.company })
   }
+
+  public chartColors:Array<any> = [
+    { // grey
+      backgroundColor: 'rgba(148,159,177,0.2)',
+      borderColor: 'rgba(148,159,177,1)',
+      pointBackgroundColor: 'rgba(148,159,177,1)',
+      pointBorderColor: '#fff',
+      pointHoverBackgroundColor: '#fff',
+      pointHoverBorderColor: 'rgba(148,159,177,0.8)'
+    },
+    // { // dark grey
+    //   backgroundColor: 'rgba(77,83,96,0.2)',
+    //   borderColor: 'rgba(77,83,96,1)',
+    //   pointBackgroundColor: 'rgba(77,83,96,1)',
+    //   pointBorderColor: '#fff',
+    //   pointHoverBackgroundColor: '#fff',
+    //   pointHoverBorderColor: 'rgba(77,83,96,1)'
+    // },
+    // { // grey
+    //   backgroundColor: 'rgba(148,159,177,0.2)',
+    //   borderColor: 'rgba(148,159,177,1)',
+    //   pointBackgroundColor: 'rgba(148,159,177,1)',
+    //   pointBorderColor: '#fff',
+    //   pointHoverBackgroundColor: '#fff',
+    //   pointHoverBorderColor: 'rgba(148,159,177,0.8)'
+    // }
+  ];
 }

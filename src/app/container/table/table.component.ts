@@ -65,6 +65,5 @@ export class TableComponent implements OnInit, DoCheck {
 
   navigateToChart(dataset) {
     this.router.navigate(['/chart']);
-    //, { queryParams: dataset, skipLocationChange: true }
   }
 }

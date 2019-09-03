@@ -18,13 +18,34 @@
   </div>
   <div class="row">
     <div class="col-lg-12">
+      <div class="nav-container" *ngIf="barChartData.length > 0">
+        <ul class="nav nav-tabs">
+          <li class="nav-item">
+            <a class="nav-link" [ngClass]="{'active': barChartType === 'bar'}" (click)="setChartType('bar', $event)">Bar Chart</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" [ngClass]="{'active': barChartType === 'doughnut'}" (click)="setChartType('doughnut', $event)">Doughnut Chart</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" [ngClass]="{'active': barChartType === 'radar'}" (click)="setChartType('radar', $event)">Radar Chart</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" [ngClass]="{'active': barChartType === 'pie'}" (click)="setChartType('pie', $event)">Pie Chart</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-lg-12">
       <canvas baseChart *ngIf="barChartData.length > 0"
         [datasets]="barChartData"
         [labels]="barChartLabels"
         [options]="barChartOptions"
         [plugins]="barChartPlugins"
         [legend]="barChartLegend"
-        [chartType]="barChartType">
+        [chartType]="barChartType"
+        [colors]="chartColors">
       </canvas>
     </div>
   </div>
